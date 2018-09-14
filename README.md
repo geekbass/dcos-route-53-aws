@@ -1,0 +1,2 @@
+# DC/OS Terraform Route53 Module
+This is the development work for building the Route53 module for dcos-terraform for AWS. This is the future holder for a module used to create a Route53 Zone, Route53 records for instances and a Route53 alias for the Master LB.

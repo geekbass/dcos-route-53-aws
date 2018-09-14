@@ -3,5 +3,5 @@ output "public_fqdns" {
 }
 
 output "private_fqdns" {
-    value = "${join("\n", aws_route53_record.instance_internal.*.name)}"
+  value = "${join("\n", aws_route53_record.instance_internal.*.name)}"
 }
