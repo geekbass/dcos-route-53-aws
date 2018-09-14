@@ -17,18 +17,3 @@ resource "aws_route53_record" "instance_internal" {
   ttl     = "${var.ttl}"
   records = ["${var.private_records}"]
 }
-
-/*
-resource "aws_route53_record" "external_masters" {
-  zone_id = "${var.aws_zone_id}"
-  name    = "${var.cluster_name}.${var.domain}"
-  type    = "A"
-
-  alias {
-    name                   = "${var.aws_lb_alias_name}"
-    zone_id                = "${var.aws_zone_id}"
-    evaluate_target_health = false
-  }
-}
-*/
-
