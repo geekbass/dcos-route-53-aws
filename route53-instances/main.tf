@@ -1,8 +1,6 @@
 resource "aws_route53_record" "instance_public" {
   count   = "${var.num}"
   zone_id = "${var.aws_zone_id}"
-
-  #name    = "${var.hostname_format}${count.index + 1}-${var.cluster_name}.${var.domain}"
   name    = "${format(var.hostname_format, (count.index + 1), var.domain, var.cluster_name)}"
   type    = "${var.type}"
   ttl     = "${var.ttl}"
