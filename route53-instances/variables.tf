@@ -43,10 +43,10 @@ variable "domain" {
 
 variable "public_records" {
   description = "Public Records (IPs) for the Bootstrap Node"
-  type = "list"
+  #type = "list"
 }
 
 variable "private_records" {
   description = "Private Records (IPs) for the Bootstrap Node"
-  type = "list"
+  #type = "list"
 }
