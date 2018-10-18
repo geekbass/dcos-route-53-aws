@@ -4,7 +4,7 @@ variable "cluster_name" {
 
 variable "hostname_format" {
   description = "Format the hostname inputs are index+1, domain, cluster_name"
-  default     = "%[3]s-bootstrap%[1]d-%[2]s"
+  default     = "%[3]s-instance%[1]d-%[2]s"
 }
 
 variable "num" {
