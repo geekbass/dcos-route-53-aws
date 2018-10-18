@@ -41,6 +41,10 @@ variable "domain" {
   description = "The domain of your Route 53 Zone"
 }
 
+variable "cluster_name" {
+  description = "Name of the DC/OS cluster"
+  default = ""
+}
 variable "public_records" {
   description = "Public Records (IPs) for the Bootstrap Node"
   type = "list"
