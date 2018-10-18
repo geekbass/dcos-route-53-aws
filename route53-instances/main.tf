@@ -1,17 +1,17 @@
 resource "aws_route53_record" "instance_public" {
   count   = "${var.num}"
   zone_id = "${var.aws_zone_id}"
-  name    = "${format(var.hostname_format, (count.index + 1), var.domain, var.cluster_name)}"
+  name    = "${element(var.hostname_format, count.index)}"
   type    = "${var.type}"
   ttl     = "${var.ttl}"
-  records = ["${var.public_records}"]
+  records = ["${element(var.public_records, count.index)}"]
 }
 
 resource "aws_route53_record" "instance_internal" {
   count   = "${var.num}"
   zone_id = "${var.aws_zone_id}"
-  name    = "int-${format(var.hostname_format, (count.index + 1), var.domain, var.cluster_name)}"
+  name    = "int-${element(var.hostname_format, count.index)}"
   type    = "${var.type}"
   ttl     = "${var.ttl}"
-  records = ["${var.private_records}"]
+  records = ["${element(var.private_records, count.index)}"]
 }

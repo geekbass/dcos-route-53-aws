@@ -1,7 +1,11 @@
 output "public_fqdns" {
-  value = "${join("\n", aws_route53_record.instance_public.*.name)}"
+  description = "List of Public FQDNs"
+  #value = "${join("\n", aws_route53_record.instance_public.*.name)}"
+  value = ["${module.aws_route53_record.instance_public.name}"]
 }
 
 output "private_fqdns" {
-  value = "${join("\n", aws_route53_record.instance_internal.*.name)}"
+  description = "List of Private FQDNs"
+  #value = "${join("\n", aws_route53_record.instance_internal.*.name)}"
+  value = ["${module.aws_route53_record.instance_private.name}"]
 }
